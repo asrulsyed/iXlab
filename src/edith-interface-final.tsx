@@ -13,7 +13,7 @@ const ThemeToggle = ({ isDark, toggleTheme }: any) => (
   >
     <div className="flex items-center gap-2">
       <span className="min-w-[90px]">{isDark ? 'DARK MODE' : 'LIGHT MODE'}</span>
-      <div className="relative w-4 h-4 flex items-center justify-center">
+      <div className="relative flex items-center justify-center w-4 h-4">
         <div className={`absolute transform transition-all duration-500 ${isDark ? 'rotate-0 scale-100' : 'rotate-90 scale-0'}`}>
           <Moon size={14} />
         </div>
@@ -102,7 +102,7 @@ const EdithInterface = () => {
   const versions = ['OPTIM 1.0.0', 'Atlas-net 1.0.0', 'SparkX-3.5'];
 
   return (
-    <div className={`min-h-screen flex flex-col transition-colors duration-300 ${
+    <div className={`min-h-screen flex flex-col transition-colors duration-300 w-screen ${
       isDark ? 'bg-gray-900' : 'bg-gray-50'
     }`}>
       {/* Header */}
@@ -134,13 +134,13 @@ const EdithInterface = () => {
           </div>
           <button 
             onClick={() => setIsOptimDropdownOpen(!isOptimDropdownOpen)}
-            className="relative flex items-center gap-2 px-3 py-1 text-xs bg-yellow-900/20 text-yellow-500 rounded-lg font-medium tracking-wider border border-yellow-900/50 hover:bg-yellow-900/30 transition-colors duration-300"
+            className="relative flex items-center gap-2 px-3 py-1 text-xs font-medium tracking-wider text-yellow-500 transition-colors duration-300 border rounded-lg bg-yellow-900/20 border-yellow-900/50 hover:bg-yellow-900/30"
           >
             {selectedVersion}
             <ChevronDown size={14} className={`transition-transform duration-300 ${isOptimDropdownOpen ? 'rotate-180' : ''}`} />
             
             {isOptimDropdownOpen && (
-              <div className="absolute top-full right-0 mt-2 w-48 py-2 bg-gray-800 rounded-lg border border-gray-700 shadow-xl">
+              <div className="absolute right-0 w-48 py-2 mt-2 bg-gray-800 border border-gray-700 rounded-lg shadow-xl top-full">
                 {versions.map((version) => (
                   <button
                     key={version}
@@ -164,17 +164,17 @@ const EdithInterface = () => {
         <div className="flex items-center gap-3">
           <button 
             onClick={() => setIsDeployDropdownOpen(!isDeployDropdownOpen)}
-            className="relative flex items-center gap-2 px-3 py-1 text-xs bg-green-900/20 text-green-500 rounded-lg font-medium tracking-wider border border-green-900/50 hover:bg-green-900/30 transition-colors duration-300"
+            className="relative flex items-center gap-2 px-3 py-1 text-xs font-medium tracking-wider text-green-500 transition-colors duration-300 border rounded-lg bg-green-900/20 border-green-900/50 hover:bg-green-900/30"
           >
             <span className="min-w-[90px]">DEPLOY AGENT</span>
             <ChevronDown size={14} className={`transition-transform duration-300 ${isDeployDropdownOpen ? 'rotate-180' : ''}`} />
             
             {isDeployDropdownOpen && (
-              <div className="absolute top-full right-0 mt-2 w-48 py-2 bg-gray-800 rounded-lg border border-gray-700 shadow-xl">
-                <button className="w-full px-4 py-2 text-left text-gray-300 hover:bg-gray-700 transition-colors duration-200">
+              <div className="absolute right-0 w-48 py-2 mt-2 bg-gray-800 border border-gray-700 rounded-lg shadow-xl top-full">
+                <button className="w-full px-4 py-2 text-left text-gray-300 transition-colors duration-200 hover:bg-gray-700">
                   Start Deployment
                 </button>
-                <button className="w-full px-4 py-2 text-left text-gray-300 hover:bg-gray-700 transition-colors duration-200">
+                <button className="w-full px-4 py-2 text-left text-gray-300 transition-colors duration-200 hover:bg-gray-700">
                   View Status
                 </button>
               </div>
@@ -222,7 +222,7 @@ const EdithInterface = () => {
       )}
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col items-center justify-center p-6">
+      <main className="flex flex-col items-center justify-center flex-1 p-6">
         <div className="flex items-center gap-3 mb-12 group">
           <ClusterLogo isDark={isDark} />
           <div className={`text-2xl font-light tracking-wider transition-colors duration-300 ${
@@ -232,7 +232,7 @@ const EdithInterface = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-2xl relative group">
+        <div className="relative w-full max-w-2xl group">
           <input
             type="text"
             placeholder="Ask me anything..."
