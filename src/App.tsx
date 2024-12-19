@@ -1,13 +1,14 @@
 import './App.css'
-import EdithInterface from './edith-interface-final'
+import Dashboard from './pages/Dashboard'
 
 function App() {
 
   return (
     <>
-      <EdithInterface />
+    <Dashboard />
     </>
   )
 }
 
 export default App
+ 

@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        bgMain: "var(--bg-main)",
+        bgCard1: "var(--bg-card1)",
+        bgCard2: "var(--bg-card2)",
+        borderMain: "var(--border-main)",
+        fontMain: "var(--font-main)",
+      },
+      fontFamily: {
+        aeonik: ['"Aeonik"'],
+      },
+    },
   },
   plugins: [],
 }
